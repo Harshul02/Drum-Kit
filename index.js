@@ -4,8 +4,18 @@ for(var i=0; i<n; i++)
 {
     document.querySelectorAll(".drum")[i].addEventListener("click", function(){
         var buttonInnerHTML= this.innerHTML;
+        makeSound(buttonInnerHTML);
+    });
+}
 
-        switch(buttonInnerHTML)
+document.addEventListener("keydown", function(Event){
+    makeSound(Event.key);
+})
+
+
+function makeSound(key){
+
+    switch(key)
         {
             case "w":
                 var audio=new Audio("sounds/tom-1.mp3");
@@ -36,11 +46,5 @@ for(var i=0; i<n; i++)
                 audio.play();
             break;
         }
-    });
 }
-
-
-
-
-
 
